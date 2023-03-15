@@ -1,0 +1,277 @@
+@font-face {
+    font-family: "Inter";
+    font-display: swap;
+    font-weight: 400 800;
+    src: url("/assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+        format("truetype");
+}
+
+/* RESET */
+*:where(
+        :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+    ) {
+    all: unset;
+    display: revert;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+a,
+label,
+button {
+    cursor: pointer;
+}
+ol,
+ul,
+menu {
+    list-style: none;
+}
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+::placeholder {
+    color: unset;
+}
+::marker {
+    content: initial;
+}
+
+/* STYLE */
+:root {
+    --accent-1: hsl(35, 77%, 62%);
+    --accent-2: hsl(5, 85%, 63%);
+
+    --light: hsl(36, 100%, 99%);
+    --neutral-light: hsl(233, 8%, 79%);
+    --neutral-mid: hsl(236, 13%, 42%);
+    --neutral-dark: hsl(240, 100%, 5%);
+
+    background-color: var(--light);
+    color: var(--neutral-mid);
+    font-family: "Inter", sans-serif;
+    font-size: 0.9375rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon {
+    display: block;
+    color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+body {
+    padding: 1rem;
+    margin-inline: auto;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1440px;
+}
+
+header {
+    margin-block: 1rem;
+}
+
+a.logo {
+    width: 65px;
+    height: 40px;
+    background-image: url(/assets/images/logo.svg);
+}
+
+#navToggler,
+label {
+    display: none;
+}
+
+header {
+    grid-column: 1 / -1;
+}
+
+main {
+    grid-column: 1 / span 2;
+}
+
+nav.flex {
+    display: flex;
+    margin-inline-start: auto;
+}
+
+nav.flex a {
+    color: var(--neutral-mid);
+}
+
+nav.flex a:is(:active, :hover, :focus) {
+    color: var(--accent-2);
+}
+
+main {
+    grid-template-columns: 1fr 1fr;
+}
+
+main picture {
+    grid-column: 1 / -1;
+}
+
+main h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--neutral-dark);
+}
+
+main .flex {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.button {
+    color: var(--light);
+    background-color: var(--accent-2);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    letter-spacing: 3px;
+}
+
+.button:where(:active, :focus, :hover) {
+    background-color: var(--neutral-dark);
+}
+
+aside {
+    background-color: var(--neutral-dark);
+    color: var(--neutral-light);
+    padding: 1rem;
+}
+
+aside h2 {
+    color: var(--accent-1);
+    font-weight: bold;
+    font-size: 1.75rem;
+    line-height: 2;
+}
+
+aside article {
+    --spacer: 2rem;
+    margin-block: var(--spacer);
+}
+
+aside article:not(:last-child) {
+    padding-block-end: var(--spacer);
+    border-block-end: 1px solid var(--neutral-mid);
+}
+
+aside .title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+aside .title:where(:active, :focus, :hover) {
+    color: var(--accent-1);
+}
+
+footer {
+    grid-column: 1 / -1;
+}
+
+footer article {
+    grid-template-columns: 1fr 4fr;
+}
+
+footer article span {
+    color: var(--neutral-light);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+footer article img {
+    grid-column: 1 / span 1;
+    grid-row: 1 / -1;
+}
+
+footer .title {
+    color: var(--neutral-dark);
+    font-weight: bold;
+}
+
+footer .title:where(:hover, :active, :focus) {
+    color: var(--accent-2);
+}
+footer .content {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.25rem;
+}
+
+.attribution {
+    grid-column: 1 / -1;
+
+    margin-block-start: 1rem;
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (width <= 375px) {
+    body {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
+    label {
+        display: block;
+        width: 40px;
+        background-image: url(/assets/images/icon-menu.svg);
+        z-index: 2;
+    }
+
+    #navToggler:checked ~ label {
+        background-image: url(/assets/images/icon-menu-close.svg);
+    }
+
+    #navToggler:not(:checked) ~ nav {
+        display: none;
+    }
+
+    nav.flex {
+        position: absolute;
+        padding: 2rem;
+        background-color: var(--light);
+        inset: 0 0 0 35%;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    nav.flex a {
+        font-weight: 700;
+        color: var(--neutral-dark);
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer article {
+        grid-template-columns: 1fr 2fr;
+    }
+}

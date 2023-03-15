@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png" />
+
+        <title>Frontend Mentor | News homepage</title>
+        <link rel="stylesheet" href="/style.css" />
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style></style>
+    </head>
+    <body class="grid">
+        <header class="flex">
+            <a href="#" class="logo icon">Home</a>
+            <input type="checkbox" id="navToggler" />
+            <label class="icon" for="navToggler">Toggle navigation</label>
+            <nav class="flex">
+                <a href="#">Home</a>
+                <a href="#">New</a>
+                <a href="#">Popular</a>
+                <a href="#">Trending</a>
+                <a href="#">Categories</a>
+            </nav>
+        </header>
+        <main class="grid">
+            <picture>
+                <source
+                    srcset="/assets/images/image-web-3-mobile.jpg"
+                    media="(width <= 375px)" />
+                <img
+                    src="/assets/images/image-web-3-desktop.jpg"
+                    alt="The Bright Future of Web 3.0?" />
+            </picture>
+            <h1>The Bright Future of Web 3.0?</h1>
+            <div class="flex">
+                <p>
+                    We dive into the next evolution of the web that claims to
+                    put the power of the platforms back into the hands of the
+                    people. But is it really fulfilling its promise?
+                </p>
+                <a href="#" class="button">Read more</a>
+            </div>
+        </main>
+        <aside>
+            <h2>New</h2>
+            <article>
+                <a href="#" class="title">Hydrogen VS Electric Cars</a>
+                <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+            </article>
+            <article>
+                <a href="#" class="title">The Downsides of AI Artistry</a>
+                <p>
+                    What are the possible adverse effects of on-demand AI image
+                    generation?
+                </p>
+            </article>
+            <article>
+                <a href="#" class="title">Is VC Funding Drying Up?</a>
+                <p>
+                    Private funding by VC firms is down 50% YOY. We take a look
+                    at what that means.
+                </p>
+            </article>
+        </aside>
+        <footer class="flex">
+            <article class="grid">
+                <img
+                    src="/assets/images/image-retro-pcs.jpg"
+                    alt="Reviving Retro PCs" />
+                <div class="content flex">
+                    <span>01</span>
+                    <a href="#" class="title">Reviving Retro PCs</a>
+                    <p>What happens when old PCs are given modern upgrades?</p>
+                </div>
+            </article>
+            <article class="grid">
+                <img
+                    src="/assets/images/image-top-laptops.jpg"
+                    alt="Top 10 Laptops of 2022" />
+                <div class="content flex">
+                    <span>02</span>
+                    <a href="#" class="title">Top 10 Laptops of 2022</a>
+                    <p>Our best picks for various needs and budgets.</p>
+                </div>
+            </article>
+            <article class="grid">
+                <img
+                    src="/assets/images/image-gaming-growth.jpg"
+                    alt="The Growth of Gaming" />
+                <div class="content flex">
+                    <span>03</span>
+                    <a href="#" class="title">The Growth of Gaming</a>
+                    <p>How the pandemic has sparked fresh opportunities.</p>
+                </div>
+            </article>
+        </footer>
+
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="https://github.com/alexsincai">Alex Sincai</a>.
+        </div>
+    </body>
+</html>
